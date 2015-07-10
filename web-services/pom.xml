@@ -145,6 +145,9 @@
                     <genWsdl>true</genWsdl>
                     <keep>true</keep>
                     <verbose>true</verbose>
+<!--                    <vmArgs>
+                        <vmArg>-Djavax.xml.accessExternalSchema = all</vmArg>
+                    </vmArgs>-->
                 </configuration>
                 <executions>     
                     <execution>

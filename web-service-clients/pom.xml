@@ -80,7 +80,10 @@
                     <extension>true</extension>       
                     <catalog>${basedir}/src/jax-ws-catalog.xml</catalog>
                     <verbose>true</verbose>
-                    <xdebug>true</xdebug>    
+                    <xdebug>true</xdebug>  
+                    <vmArgs>
+                        <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                    </vmArgs>  
                 </configuration>
                 <executions>
                     <execution>
