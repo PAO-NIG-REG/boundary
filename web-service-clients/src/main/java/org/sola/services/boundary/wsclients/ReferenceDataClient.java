@@ -166,6 +166,10 @@ public interface ReferenceDataClient extends AbstractWSClient {
     public static final String GET_BA_UNIT_REL_TYPES = SERVICE_NAME + "getBaUnitRelTypes";
     
     public static final String GET_CONDITION_TYPES = SERVICE_NAME + "getConditionTypes";
+    
+    public static final String GET_BA_UNIT_DETAIL_TYPES = SERVICE_NAME + "getBaUnitDetailTypes";
+    
+    public static final String GET_RRR_DETAIL_TYPES = SERVICE_NAME + "getRrrDetailTypes";
 
         /**
      * ReferenceData.getHierarchyLevels - Identifier for the getHierarchyLevels method
@@ -633,6 +637,14 @@ public interface ReferenceDataClient extends AbstractWSClient {
     List<ConditionTypeTO> getConditionTypes() throws WebServiceClientException;
     
     List<ConditionTypeTO> getConditionTypes(String lang) throws WebServiceClientException;
+    
+    List<BaUnitDetailTypeTO> getBaUnitDetailTypes() throws WebServiceClientException;
+    
+    List<BaUnitDetailTypeTO> getBaUnitDetailTypes(String lang) throws WebServiceClientException;
+    
+    List<RrrDetailTypeTO> getRrrDetailTypes() throws WebServiceClientException;
+    
+    List<RrrDetailTypeTO> getRrrDetailTypes(String lang) throws WebServiceClientException;
 
     /**
      * Retrieves all cadastre.hierarchy_level code values using the default locale of the client to

@@ -630,7 +630,62 @@ public class ReferenceData extends AbstractWebService {
 
         return (List<ConditionTypeTO>) result[0];
     }
+    
+    
+     /**
+     * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getBaUnitDetailTypes(java.lang.String) (java.lang.String)
+     * AdministrativeEJB.getBaUnitDetailTypes}
+     *
+     * @throws SOLAFault
+     * @throws UnhandledFault
+     * @throws SOLAAccessFault
+     */
+    @WebMethod(operationName = "getBaUnitDetailTypes")
+    public List<BaUnitDetailTypeTO> getBaUnitDetailTypes(String languageCode)
+            throws SOLAFault, UnhandledFault, SOLAAccessFault {
 
+        final String languageCodeTmp = languageCode;
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTOList(
+                        administrativeEJB.getBaUnitDetailTypes(languageCodeTmp), BaUnitDetailTypeTO.class);
+            }
+        });
+
+        return (List<BaUnitDetailTypeTO>) result[0];
+    }
+    
+     /**
+     * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getRrrDetailTypes(java.lang.String) (java.lang.String)
+     * AdministrativeEJB.getRrrDetailTypes}
+     *
+     * @throws SOLAFault
+     * @throws UnhandledFault
+     * @throws SOLAAccessFault
+     */
+    @WebMethod(operationName = "getRrrDetailTypes")
+    public List<RrrDetailTypeTO> getRrrDetailTypes(String languageCode)
+            throws SOLAFault, UnhandledFault, SOLAAccessFault {
+
+        final String languageCodeTmp = languageCode;
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTOList(
+                        administrativeEJB.getRrrDetailTypes(languageCodeTmp), RrrDetailTypeTO.class);
+            }
+        });
+
+        return (List<RrrDetailTypeTO>) result[0];
+    }
+    
     /**
      * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getRRRGroupTypes(java.lang.String)
      * AdministrativeEJB.getRRRGroupTypes}

@@ -655,7 +655,50 @@ public class ReferenceDataClientImpl extends AbstractWSClientImpl implements Ref
         }
         return result;
     }
+    
+    
+    @Override
+    public List<BaUnitDetailTypeTO> getBaUnitDetailTypes() throws WebServiceClientException {
+        return getBaUnitDetailTypes(getLanguageCode());
+    }
 
+    @Override
+    public List<BaUnitDetailTypeTO> getBaUnitDetailTypes(String lang) throws WebServiceClientException {
+        List<BaUnitDetailTypeTO> result = null;
+        final String methodName = ReferenceDataClient.GET_BA_UNIT_DETAIL_TYPES;
+        try {
+            beforeWebMethod(methodName, lang);
+            result = getPort().getBaUnitDetailTypes(lang);
+        } catch (Exception e) {
+            processException(methodName, e);
+        } finally {
+            afterWebMethod(methodName, result, lang);
+        }
+        return result;
+    }
+     @Override
+    
+     public List<RrrDetailTypeTO> getRrrDetailTypes() throws WebServiceClientException {
+        return getRrrDetailTypes(getLanguageCode());
+    }
+
+    @Override
+    public List<RrrDetailTypeTO> getRrrDetailTypes(String lang) throws WebServiceClientException {
+        List<RrrDetailTypeTO> result = null;
+        final String methodName = ReferenceDataClient.GET_RRR_DETAIL_TYPES;
+        try {
+            beforeWebMethod(methodName, lang);
+            result = getPort().getRrrDetailTypes(lang);
+        } catch (Exception e) {
+            processException(methodName, e);
+        } finally {
+            afterWebMethod(methodName, result, lang);
+        }
+        return result;
+    }
+    
+    
+    
     @Override
     public List<HierarchyLevelTO> getHierarchyLevels() throws WebServiceClientException {
         return getHierarchyLevels(getLanguageCode());

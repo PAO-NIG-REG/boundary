@@ -631,7 +631,16 @@ public class MockReferenceDataPort implements ReferenceData {
     public List<ConditionTypeTO> getConditionTypes(String arg0) throws SOLAAccessFault, SOLAFault, UnhandledFault {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
+    
+    @Override
+    public List<BaUnitDetailTypeTO> getBaUnitDetailTypes(String arg0) throws SOLAAccessFault, SOLAFault, UnhandledFault {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+     @Override
+    public List<RrrDetailTypeTO> getRrrDetailTypes(String arg0) throws SOLAAccessFault, SOLAFault, UnhandledFault {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     /**
      * Response Key = ReferenceDataClient.GET_HIERARCHY_LEVELS
      *

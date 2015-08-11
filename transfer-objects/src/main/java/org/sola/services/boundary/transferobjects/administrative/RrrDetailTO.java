@@ -4,12 +4,12 @@
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
+ * are permitted provided that the following details are met:
  *
  *    1. Redistributions of source code must retain the above copyright notice,this list
- *       of conditions and the following disclaimer.
+ *       of details and the following disclaimer.
  *    2. Redistributions in binary form must reproduce the above copyright notice,this list
- *       of conditions and the following disclaimer in the documentation and/or other
+ *       of details and the following disclaimer in the documentation and/or other
  *       materials provided with the distribution.
  *    3. Neither the name of FAO nor the names of its contributors may be used to endorse or
  *       promote products derived from this software without specific prior written permission.
@@ -25,23 +25,61 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * *********************************************************************************************
  */
-package org.sola.services.boundary.transferobjects.referencedata;
+package org.sola.services.boundary.transferobjects.administrative;
 
-import org.sola.services.common.contracts.AbstractCodeTO;
+import org.sola.services.common.contracts.AbstractIdTO;
 
-public class ConditionTypeTO extends AbstractCodeTO {
-    private String isFor;
-    
-    public ConditionTypeTO() {
+public class RrrDetailTO extends AbstractIdTO {
+    private String rrrId;
+    private String detailCode;
+    private String customConditionText;
+    private int detailQuantity;
+    private String detailUnit;
+   
+    public RrrDetailTO(){
         super();
     }
+
+   
     
-    public String getIsFor() {
-        return isFor;
+    
+    public String getCustomConditionText() {
+        return customConditionText;
     }
 
-    public void setIsFor(String isFor) {
-        this.isFor = isFor;
+    public void setCustomConditionText(String customConditionText) {
+        this.customConditionText = customConditionText;
     }
     
+    public String getConditionCode() {
+        return detailCode;
+    }
+
+    public void setConditionCode(String detailCode) {
+        this.detailCode = detailCode;
+    }
+
+    public int getConditionQuantity() {
+        return detailQuantity;
+    }
+
+    public void setConditionQuantity(int detailQuantity) {
+        this.detailQuantity = detailQuantity;
+    }
+
+    public String getConditionUnit() {
+        return detailUnit;
+    }
+
+    public void setConditionUnit(String detailUnit) {
+        this.detailUnit = detailUnit;
+    }
+
+    public String getRrrId() {
+        return rrrId;
+    }
+
+    public void setRrrId(String rrrId) {
+        this.rrrId = rrrId;
+    }
 }
