@@ -32,47 +32,13 @@ import org.sola.services.common.contracts.AbstractIdTO;
 public class BaUnitDetailTO extends AbstractIdTO {
     private String baUnitId;
     private String detailCode;
-    private String customConditionText;
     private int detailQuantity;
     private String detailUnit;
-   
+    private String customDetailText;
+    
+    
     public BaUnitDetailTO(){
         super();
-    }
-
-    
-    
-    
-    public String getCustomConditionText() {
-        return customConditionText;
-    }
-
-    public void setCustomConditionText(String customConditionText) {
-        this.customConditionText = customConditionText;
-    }
-    
-    public String getConditionCode() {
-        return detailCode;
-    }
-
-    public void setConditionCode(String detailCode) {
-        this.detailCode = detailCode;
-    }
-
-    public int getConditionQuantity() {
-        return detailQuantity;
-    }
-
-    public void setConditionQuantity(int detailQuantity) {
-        this.detailQuantity = detailQuantity;
-    }
-
-    public String getConditionUnit() {
-        return detailUnit;
-    }
-
-    public void setConditionUnit(String detailUnit) {
-        this.detailUnit = detailUnit;
     }
 
     public String getBaUnitId() {
@@ -82,4 +48,41 @@ public class BaUnitDetailTO extends AbstractIdTO {
     public void setBaUnitId(String baUnitId) {
         this.baUnitId = baUnitId;
     }
+
+    public String getDetailCode() {
+        return detailCode;
+    }
+
+    public void setDetailCode(String detailCode) {
+        this.detailCode = detailCode;
+    }
+
+    public int getDetailQuantity() {
+        return detailQuantity;
+    }
+
+    public void setDetailQuantity(int detailQuantity) {
+        this.detailQuantity = detailQuantity;
+    }
+
+    public String getDetailUnit() {
+        return detailUnit;
+    }
+
+    public void setDetailUnit(String detailUnit) {
+        this.detailUnit = detailUnit;
+    }
+
+    public String getCustomDetailText() {
+        return customDetailText;
+    }
+
+    public void setCustomDetailText(String customDetailText) {
+        this.customDetailText = customDetailText;
+    }
+
+    
+    
+    
+  
 }

@@ -57,6 +57,7 @@ public class RrrTO extends AbstractIdTO {
     private BaUnitNotationTO notation;
     private List<PartySummaryTO> rightHolderList;
     private List<ConditionForRrrTO> conditionsList;
+    private List<RrrDetailTO> rrrDetailList;
     private String concatenatedName;
 
     public String getConcatenatedName() {
@@ -215,7 +216,16 @@ public class RrrTO extends AbstractIdTO {
     public void setConditionsList(List<ConditionForRrrTO> conditionsList) {
         this.conditionsList = conditionsList;
     }
+    
+    
+    public List<RrrDetailTO> getRrrDetailList() {
+        return rrrDetailList;
+    }
 
+    public void setRrrDetailList(List<RrrDetailTO> rrrDetailList) {
+        this.rrrDetailList = rrrDetailList;
+    }
+    
     public String getStatusCode() {
         return statusCode;
     }

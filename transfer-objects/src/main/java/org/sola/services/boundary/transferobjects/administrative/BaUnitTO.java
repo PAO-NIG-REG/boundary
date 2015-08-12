@@ -50,7 +50,8 @@ public class BaUnitTO extends AbstractIdTO {
     private List<RelatedBaUnitInfoTO> parentBaUnits;
     private String pendingActionCode;
     private BigDecimal calculatedAreaSize;
-
+    private List<BaUnitDetailTO> baUnitDetailList;
+    
     public BigDecimal getCalculatedAreaSize() {
         return calculatedAreaSize;
     }
@@ -187,5 +188,15 @@ public class BaUnitTO extends AbstractIdTO {
     public void setPendingActionCode(String pendingActionCode) {
         this.pendingActionCode = pendingActionCode;
     }
+
+    public List<BaUnitDetailTO> getBaUnitDetailList() {
+        return baUnitDetailList;
+    }
+
+    public void setBaUnitDetailList(List<BaUnitDetailTO> baUnitDetailList) {
+        this.baUnitDetailList = baUnitDetailList;
+    }
+    
+    
     
 }
