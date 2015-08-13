@@ -1400,7 +1400,38 @@ public class CaseManagement extends AbstractWebService {
 
         return (List<SysRegCertificatesTO>) result[0];
     }
+    
+    
+     /**
+     * See {@linkplain org.sola.services.ejb.application.businesslogic.ApplicationEJB#getSysRegCertificatesByCo(java.lang.String)
+     * CadastreEJB.getSysRegPubDisParcelNameByCo}
+     *
+     * @throws SOLAFault
+     * @throws UnhandledFault
+     * @throws SOLAAccessFault
+     */
+    @WebMethod(operationName = "GetSysRegCertificatesByCo")
+    public List<SysRegCertificatesTO> GetSysRegCertificatesByCo(
+            @WebParam(name = "searchString") String searchString)
+            throws SOLAFault, UnhandledFault, SOLAAccessFault {
 
+        final String searchStringTmp = searchString;
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTOList(
+                        applicationEJB.getSysRegCertificatesByCo(searchStringTmp),
+                        SysRegCertificatesTO.class);
+            }
+        });
+
+        return (List<SysRegCertificatesTO>) result[0];
+    }
+
+    
     /**
      * See {@linkplain org.sola.services.ejb.application.businesslogic.ApplicationEJB#getSysRegCertificatesByApplication(java.lang.String)
      * CadastreEJB.getSysRegCertificatesByApplication}

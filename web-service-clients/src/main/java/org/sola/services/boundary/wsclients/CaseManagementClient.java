@@ -234,6 +234,14 @@ public interface CaseManagementClient extends AbstractWSClient {
      * getSysRegCertificates method
      */
     public static final String GET_SYS_REG_CERTIFICATES = SERVICE_NAME + "getSysRegCerificatesByLocation";
+    
+    /**
+     * Application.getSysRegCertificates - Identifier for the
+     * getSysRegCertificates method
+     */
+    public static final String GET_CERTIFICATES_BYCO = SERVICE_NAME + "getSysRegCerificatesByCo";
+    
+    
     /**
      * Application.getSysRegCertificates - Identifier for the
      * getSysRegCertificatesApp method
@@ -806,7 +814,20 @@ public interface CaseManagementClient extends AbstractWSClient {
      */
     List<SysRegCertificatesTO> getSysRegCertificatesByLocation(String searchString)
             throws WebServiceClientException;
+    
+      /**
+     * Returns a list of cadastre objects that have a name last part that
+     * matches the specified search string. This method supports partial matches
+     * and is case insensitive.
+     *
+     * @param searchString The search string to use
+     * @return The list of cadastre objects matching the search string
+     * @throws WebServiceClientException
+     */
+    List<SysRegCertificatesTO> getSysRegCertificatesByCo(String searchString)
+            throws WebServiceClientException;
 
+    
     /**
      * Returns a list of cadastre objects that have a name last part that
      * matches the specified search string. This method supports partial matches
