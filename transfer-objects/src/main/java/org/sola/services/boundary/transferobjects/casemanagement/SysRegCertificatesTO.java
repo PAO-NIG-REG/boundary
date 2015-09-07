@@ -59,9 +59,28 @@ public class SysRegCertificatesTO extends AbstractIdTO {
     private String sheetnr;
 //    private String commencingdate;
     private String purpose;
-    private Integer term;
-    private Integer rent;
+    private String term;
+    private String rent;
 
+    public String getTerm() {
+        return term;
+    }
+
+    public void setTerm(String term) {
+        this.term = term;
+    }
+
+    public String getRent() {
+        return rent;
+    }
+
+    public void setRent(String rent) {
+        this.rent = rent;
+    }
+    
+    
+    
+    
     public String getNameFirstpart() {
         return nameFirstpart;
     }
@@ -198,21 +217,7 @@ public class SysRegCertificatesTO extends AbstractIdTO {
         this.purpose = purpose;
     }
 
-    public Integer getTerm() {
-        return term;
-    }
-
-    public void setTerm(Integer term) {
-        this.term = term;
-    }
-
-    public Integer getRent() {
-        return rent;
-    }
-
-    public void setRent(Integer rent) {
-        this.rent = rent;
-    }
+   
     
     
     
