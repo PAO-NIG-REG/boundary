@@ -35,6 +35,7 @@ public class BaUnitDetailTypeTO extends AbstractCodeTO {
 
     private String isFor;
     private String fieldType;
+    private Integer orderView;
 
     public BaUnitDetailTypeTO() {
         super();
@@ -55,5 +56,13 @@ public class BaUnitDetailTypeTO extends AbstractCodeTO {
     public void setFieldType(String fieldType) {
         this.fieldType = fieldType;
     }
-    
+
+    public Integer getOrderView() {
+        return orderView;
+    }
+
+    public void setOrderView(Integer orderView) {
+        this.orderView = orderView;
+    }
+
 }
