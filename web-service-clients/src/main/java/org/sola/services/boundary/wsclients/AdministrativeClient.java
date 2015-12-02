@@ -101,6 +101,10 @@ public interface AdministrativeClient extends AbstractWSClient {
      * getBaUnitWithCadObject method
      */
     public static final String GET_BA_UNIT_WITH_CAD_OBJECT = SERVICE_NAME + "getBaUnitWithCadObject";
+    
+//    public static final String GET_BA_UNIT_BY_CAD_OBJECT = SERVICE_NAME + "getBaUnitsByCadObject";
+    
+    
     /**
      * Administrative.getCadastreObjects - Identifier for the getCadastreObjects
      * method
@@ -260,6 +264,8 @@ public interface AdministrativeClient extends AbstractWSClient {
      * @throws WebServiceClientException
      */
     BaUnitTO getBaUnitWithCadObject(String nameFirstPart, String nameLastPart, String colist) throws WebServiceClientException;
+    
+//    List <BaUnitTO> getBaUnitsByCadObject(String colist) throws WebServiceClientException;
 
     /**
      * Returns a list of cadastre objects that have a name last part that

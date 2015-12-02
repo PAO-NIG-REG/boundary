@@ -386,7 +386,45 @@ public class MockTOFactory {
 
         return result;
     }
+    
+     /**
+     * Creates a default list of land use types
+     */
+    public static List<LgaTypeTO> createLgaTypes() {
+        List<LgaTypeTO> result = new ArrayList<LgaTypeTO>();
+        result.add(createCode(LgaTypeTO.class, "type1", "Type1"));
+        result.add(createCode(LgaTypeTO.class, "type2", "Type2"));
+        result.add(createCode(LgaTypeTO.class, "type3", "Type3"));
 
+        return result;
+    }
+    
+     /**
+     * Creates a default list of land use types
+     */
+    public static List<ZoneTypeTO> createZoneTypes() {
+        List<ZoneTypeTO> result = new ArrayList<ZoneTypeTO>();
+        result.add(createCode(ZoneTypeTO.class, "type1", "Type1"));
+        result.add(createCode(ZoneTypeTO.class, "type2", "Type2"));
+        result.add(createCode(ZoneTypeTO.class, "type3", "Type3"));
+
+        return result;
+    }
+    
+    
+     /**
+     * Creates a default list of land use types
+     */
+    public static List<RotTypeTO> createRotTypes() {
+        List<RotTypeTO> result = new ArrayList<RotTypeTO>();
+        result.add(createCode(RotTypeTO.class, "type1", "Type1"));
+        result.add(createCode(RotTypeTO.class, "type2", "Type2"));
+        result.add(createCode(RotTypeTO.class, "type3", "Type3"));
+
+        return result;
+    }
+
+    
     /**
      * Creates a default list of request types using generics so that it is
      * possible to also generate RequestTypeSourceType using the same code. <p>

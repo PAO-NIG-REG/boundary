@@ -393,7 +393,28 @@ public class Administrative extends AbstractWebService {
 
         return (BaUnitTO) result[0];
     }
-
+    
+    
+//    @WebMethod(operationName = "GetBaUnitsByCadObject")
+//    public List <BaUnitTO> GetBaUnitsByCadObject(
+//            @WebParam(name = "colist") String colist)
+//            throws SOLAFault, UnhandledFault {
+//
+//        final String colistTmp = colist;
+//        final Object[] result = {null};
+//
+//        runOpenQuery(wsContext, new Runnable() {
+//
+//            @Override
+//            public void run() {
+//                result[0] = GenericTranslator.toTOList(
+//                        administrativeEJB.getBaUnitsByCadObject(colistTmp), BaUnitTO.class);
+//            }
+//        });
+//
+//        return (List<BaUnitTO>) result[0];
+//    }
+    
     /**
      * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getSysRegPubDisParcelNameByLocation(java.lang.String)
      * AdministrativeEJB.getSysRegPubDisParcelNameByLocation}

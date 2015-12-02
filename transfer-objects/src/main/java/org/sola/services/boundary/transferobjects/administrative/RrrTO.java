@@ -59,7 +59,84 @@ public class RrrTO extends AbstractIdTO {
     private List<ConditionForRrrTO> conditionsList;
     private List<RrrDetailTO> rrrDetailList;
     private String concatenatedName;
+    private Date dateCommenced;
+    private Date dateSigned;
+    private String cOfO;
+    private Integer term;
+    private BigDecimal advancePayment;
+    private BigDecimal yearlyRent;
+    private Integer reviewPeriod;
+    private String zoneCode;
+    private String rotCode;
+    private String instrRegNum;
 
+    public String getInstrRegNum() {
+        return instrRegNum;
+    }
+
+    public void setInstrRegNum(String instrRegNum) {
+        this.instrRegNum = instrRegNum;
+    }
+   
+    public Date getDateCommenced() {
+        return dateCommenced;
+    }
+
+    public void setDateCommenced(Date dateCommenced) {
+        this.dateCommenced = dateCommenced;
+    }
+
+    public Date getDateSigned() {
+        return dateSigned;
+    }
+
+    public void setDateSigned(Date dateSigned) {
+        this.dateSigned = dateSigned;
+    }
+
+    public String getCOfO() {
+        return cOfO;
+    }
+
+    public void setCOfO(String cOfO) {
+        this.cOfO = cOfO;
+    }
+
+    public Integer getTerm() {
+        return term;
+    }
+
+    public void setTerm(Integer term) {
+        this.term = term;
+    }
+
+    public BigDecimal getAdvancePayment() {
+        return advancePayment;
+    }
+
+    public void setAdvancePayment(BigDecimal advancePayment) {
+        this.advancePayment = advancePayment;
+    }
+
+    public BigDecimal getYearlyRent() {
+        return yearlyRent;
+    }
+
+    public void setYearlyRent(BigDecimal yearlyRent) {
+        this.yearlyRent = yearlyRent;
+    }
+
+    public Integer getReviewPeriod() {
+        return reviewPeriod;
+    }
+
+    public void setReviewPeriod(Integer reviewPeriod) {
+        this.reviewPeriod = reviewPeriod;
+    }
+    
+    
+    
+    
     public String getConcatenatedName() {
         return concatenatedName;
     }
@@ -130,6 +207,22 @@ public class RrrTO extends AbstractIdTO {
 
     public void setMortgageTypeCode(String mortgageTypeCode) {
         this.mortgageTypeCode = mortgageTypeCode;
+    }
+    
+     public String getZoneCode() {
+        return zoneCode;
+    }
+
+    public void setZoneCode(String zoneCode) {
+        this.zoneCode = zoneCode;
+    }
+    
+     public String getRotCode() {
+        return rotCode;
+    }
+
+    public void setRotCode(String rotCode) {
+        this.rotCode = rotCode;
     }
 
     public BaUnitNotationTO getNotation() {

@@ -50,6 +50,42 @@ public class CadastreObjectTO extends AbstractIdTO {
     private byte[] geomPolygon;
     private List<SpatialValueAreaTO> spatialValueAreaList = new ArrayList<SpatialValueAreaTO>();
     private List<AddressTO> addressList;
+    private String block;
+    private String plotNum;
+    private String lgaCode;
+    private String intellMapSheet;
+
+    public String getBlock() {
+        return block;
+    }
+
+    public void setBlock(String block) {
+        this.block = block;
+    }
+
+    public String getPlotNum() {
+        return plotNum;
+    }
+
+    public void setPlotNum(String plotNum) {
+        this.plotNum = plotNum;
+    }
+
+    public String getLgaCode() {
+        return lgaCode;
+    }
+
+    public void setLgaCode(String lgaCode) {
+        this.lgaCode = lgaCode;
+    }
+
+    public String getIntellMapSheet() {
+        return intellMapSheet;
+    }
+
+    public void setIntellMapSheet(String intellMapSheet) {
+        this.intellMapSheet = intellMapSheet;
+    }
     
     public CadastreObjectTO() {
         super();

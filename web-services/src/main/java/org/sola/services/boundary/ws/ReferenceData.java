@@ -603,7 +603,37 @@ public class ReferenceData extends AbstractWebService {
 
         return (List<MortgageTypeTO>) result[0];
     }
+     
+    
+     /**
+     * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getMortgageTypes(java.lang.String)
+     * AdministrativeEJB.getMortgageTypes}
+     *
+     * @throws SOLAFault
+     * @throws UnhandledFault
+     * @throws SOLAAccessFault
+     */
+    @WebMethod(operationName = "GetRotTypes")
+    public List<RotTypeTO> GetRotTypes(String languageCode)
+            throws SOLAFault, UnhandledFault, SOLAAccessFault {
 
+        final String languageCodeTmp = languageCode;
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTOList(
+                        administrativeEJB.getRotTypes(languageCodeTmp), RotTypeTO.class);
+            }
+        });
+
+        return (List<RotTypeTO>) result[0];
+    }
+
+    
+    
     /**
      * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getConditionTypes(java.lang.String) (java.lang.String)
      * AdministrativeEJB.getConditionTypes}
@@ -631,7 +661,35 @@ public class ReferenceData extends AbstractWebService {
         return (List<ConditionTypeTO>) result[0];
     }
     
-    
+        /**
+     * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getConditionTypes(java.lang.String) (java.lang.String)
+     * AdministrativeEJB.getConditionTypes}
+     *
+     * @throws SOLAFault
+     * @throws UnhandledFault
+     * @throws SOLAAccessFault
+     */
+    @WebMethod(operationName = "getConditionTypesFor")
+    public List<ConditionTypeTO> getConditionTypesFor(
+             @WebParam(name = "isFor") String isFor,
+             @WebParam(name = "languageCode") String languageCode)
+            throws SOLAFault, UnhandledFault, SOLAAccessFault {
+
+        final String languageCodeTmp = languageCode;
+        final String isForTmp = isFor;
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTOList(
+                        administrativeEJB.getConditionTypesFor(isForTmp, languageCodeTmp), ConditionForTypeTO.class);
+            }
+        });
+
+        return (List<ConditionTypeTO>) result[0];
+    }
      /**
      * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getBaUnitDetailTypes(java.lang.String) (java.lang.String)
      * AdministrativeEJB.getBaUnitDetailTypes}
@@ -823,7 +881,64 @@ public class ReferenceData extends AbstractWebService {
 
         return (List<LandUseTypeTO>) result[0];
     }
+    
+      /**
+     * See {@linkplain org.sola.services.ejb.cadastre.businesslogic.CadastreEJB#getLandUseTypes(java.lang.String)
+     * CadastreEJB.getCadastreObjectTypes}
+     *
+     * @throws SOLAFault
+     * @throws UnhandledFault
+     * @throws SOLAAccessFault
+     */
+    @WebMethod(operationName = "GetLgaTypes")
+    public List<LgaTypeTO> GetLgaTypes(String languageCode)
+            throws SOLAFault, UnhandledFault, SOLAAccessFault {
 
+        final String languageCodeTmp = languageCode;
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTOList(
+                        cadastreEJB.getLgaTypes(languageCodeTmp),
+                        LgaTypeTO.class);
+            }
+        });
+
+        return (List<LgaTypeTO>) result[0];
+    }
+    
+    /**
+     * See {@linkplain org.sola.services.ejb.cadastre.businesslogic.CadastreEJB#getLandUseTypes(java.lang.String)
+     * CadastreEJB.getCadastreObjectTypes}
+     *
+     * @throws SOLAFault
+     * @throws UnhandledFault
+     * @throws SOLAAccessFault
+     */
+    @WebMethod(operationName = "GetZoneTypes")
+    public List<ZoneTypeTO> GetZoneTypes(String languageCode)
+            throws SOLAFault, UnhandledFault, SOLAAccessFault {
+
+        final String languageCodeTmp = languageCode;
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTOList(
+                        cadastreEJB.getZoneTypes(languageCodeTmp),
+                        LgaTypeTO.class);
+            }
+        });
+
+        return (List<ZoneTypeTO>) result[0];
+    }
+    
+    
     /**
      * See {@linkplain org.sola.services.ejb.cadastre.businesslogic.CadastreEJB#getCadastreObjectTypes(java.lang.String)
      * CadastreEJB.getCadastreObjectTypes}

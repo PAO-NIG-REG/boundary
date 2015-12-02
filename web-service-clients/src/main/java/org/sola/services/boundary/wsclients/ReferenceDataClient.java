@@ -138,7 +138,25 @@ public interface ReferenceDataClient extends AbstractWSClient {
     /**
      * ReferenceData.getCadastreObjectTypes - Identifier for the getCadastreObjectTypes method
      */
+    
+    /**
+     * ReferenceData.getCadastreObjectTypes - Identifier for the getCadastreObjectTypes method
+     */
     public static final String GET_LAND_USE_TYPES = SERVICE_NAME + "getLandUseTypes";
+    /**
+     * ReferenceData.getCadastreObjectTypes - Identifier for the getCadastreObjectTypes method
+     */
+    public static final String GET_LGA_TYPES = SERVICE_NAME + "getLgaTypes";
+     /**
+     * ReferenceData.getCadastreObjectTypes - Identifier for the getCadastreObjectTypes method
+     */
+    public static final String GET_ZONE_TYPES = SERVICE_NAME + "getZoneTypes";
+    
+     /**
+     * ReferenceData.getMortgageTypes - Identifier for the getMortgageTypes method
+     */
+    public static final String GET_ROT_TYPES = SERVICE_NAME + "getRotTypes";
+   
     /**
      * ReferenceData.getCadastreObjectTypes - Identifier for the getCadastreObjectTypes method
      */
@@ -166,6 +184,8 @@ public interface ReferenceDataClient extends AbstractWSClient {
     public static final String GET_BA_UNIT_REL_TYPES = SERVICE_NAME + "getBaUnitRelTypes";
     
     public static final String GET_CONDITION_TYPES = SERVICE_NAME + "getConditionTypes";
+    
+    public static final String GET_CONDITION_TYPES_FOR = SERVICE_NAME + "getConditionTypesFor";
     
     public static final String GET_BA_UNIT_DETAIL_TYPES = SERVICE_NAME + "getBaUnitDetailTypes";
     
@@ -444,7 +464,14 @@ public interface ReferenceDataClient extends AbstractWSClient {
      * @throws WebServiceClientException
      */
     List<MortgageTypeTO> getMortgageTypes(String lang) throws WebServiceClientException;
+    
+    
+    
+    List<RotTypeTO> getRotTypes() throws WebServiceClientException;
 
+    List<RotTypeTO> getRotTypes(String lang) throws WebServiceClientException;
+
+    
     /**
      * Retrieves all administrative.rrr_group_type code values using the default locale of the
      * client to localize the display values.
@@ -545,6 +572,28 @@ public interface ReferenceDataClient extends AbstractWSClient {
 
    
     
+     List<LgaTypeTO> getLgaTypes() throws WebServiceClientException;
+
+    /**
+     * Retrieves all cadastre.land_use_type code values.
+     *
+     * @param languageCode The language code to use for localization of display values.
+     * @throws WebServiceClientException
+     */
+    List<LgaTypeTO> getLgaTypes(String lang) throws WebServiceClientException;
+
+   
+    List<ZoneTypeTO> getZoneTypes() throws WebServiceClientException;
+
+    /**
+     * Retrieves all cadastre.land_use_type code values.
+     *
+     * @param languageCode The language code to use for localization of display values.
+     * @throws WebServiceClientException
+     */
+    List<ZoneTypeTO> getZoneTypes(String lang) throws WebServiceClientException;
+
+    
     /**
      * Retrieves all cadastre.cadastre_object_type code values using the default locale of the
      * client to localize the display values.
@@ -637,6 +686,10 @@ public interface ReferenceDataClient extends AbstractWSClient {
     List<ConditionTypeTO> getConditionTypes() throws WebServiceClientException;
     
     List<ConditionTypeTO> getConditionTypes(String lang) throws WebServiceClientException;
+    
+    List<ConditionTypeTO> getConditionTypesFor() throws WebServiceClientException;
+    
+    List<ConditionTypeTO> getConditionTypesFor(String isFor, String lang) throws WebServiceClientException;
     
     List<BaUnitDetailTypeTO> getBaUnitDetailTypes() throws WebServiceClientException;
     

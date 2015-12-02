@@ -378,7 +378,46 @@ public class MockReferenceDataPort implements ReferenceData {
             return null;
         }
     }
-
+     /**
+     * Response Key = ReferenceDataClient.GET_LAND_USE_TYPES
+     *
+     * @return default = MockTOFactory.createLandUseTypes()
+     */
+    @Override
+    public List<LgaTypeTO> getLgaTypes(String arg0) throws SOLAAccessFault, SOLAFault, UnhandledFault {
+        List<LgaTypeTO> defaultResponse = MockTOFactory.createLgaTypes();
+        try {
+            return getManager().getResponse(ReferenceDataClient.GET_LGA_TYPES,
+                    List.class, defaultResponse, arg0);
+        } catch (Exception ex) {
+            processExceptionAccess(ex);
+            return null;
+        }
+    }
+    @Override
+    public List<ZoneTypeTO> getZoneTypes(String arg0) throws SOLAAccessFault, SOLAFault, UnhandledFault {
+        List<ZoneTypeTO> defaultResponse = MockTOFactory.createZoneTypes();
+        try {
+            return getManager().getResponse(ReferenceDataClient.GET_ZONE_TYPES,
+                    List.class, defaultResponse, arg0);
+        } catch (Exception ex) {
+            processExceptionAccess(ex);
+            return null;
+        }
+    }
+    
+    
+     @Override
+    public List<RotTypeTO> getRotTypes(String arg0) throws SOLAAccessFault, SOLAFault, UnhandledFault {
+        List<RotTypeTO> defaultResponse = MockTOFactory.createRotTypes();
+        try {
+            return getManager().getResponse(ReferenceDataClient.GET_ROT_TYPES,
+                    List.class, defaultResponse, arg0);
+        } catch (Exception ex) {
+            processExceptionAccess(ex);
+            return null;
+        }
+    }
     /**
      * Response Key = ReferenceDataClient.GET_TYPE_ACTIONS
      *
@@ -626,11 +665,18 @@ public class MockReferenceDataPort implements ReferenceData {
             return null;
         }
     }
-
+    
+    @Override
+    public List<ConditionTypeTO> getConditionTypesFor(String arg0, String arg1) throws SOLAAccessFault, SOLAFault, UnhandledFault {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
     @Override
     public List<ConditionTypeTO> getConditionTypes(String arg0) throws SOLAAccessFault, SOLAFault, UnhandledFault {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+    
+    
     
     @Override
     public List<BaUnitDetailTypeTO> getBaUnitDetailTypes(String arg0) throws SOLAAccessFault, SOLAFault, UnhandledFault {

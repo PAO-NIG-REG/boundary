@@ -230,6 +230,23 @@ public class AdministrativeClientImpl extends AbstractWSClientImpl
         }
         return result;
     }
+    
+    
+//    @Override
+//    public List<BaUnitTO> getBaUnitsByCadObject( String colist) throws WebServiceClientException {
+//        List<BaUnitTO> result = null;
+//        final String methodName = AdministrativeClient.GET_BA_UNIT_BY_CAD_OBJECT;
+//        try {
+//            beforeWebMethod(methodName,  colist);
+//            result = getPort().getBaUnitsByCadObject(colist);
+//        } catch (Exception e) {
+//            processException(methodName, e);
+//        } finally {
+//            afterWebMethod(methodName, result,  colist);
+//        }
+//        return result;
+//    }
+
 
     @Override
     public List<SysRegPubDisParcelNameTO> getSysRegPubDisParcelNameByLocation(String searchString)
