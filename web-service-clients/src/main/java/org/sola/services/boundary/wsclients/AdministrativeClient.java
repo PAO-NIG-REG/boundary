@@ -29,13 +29,11 @@
  */
 package org.sola.services.boundary.wsclients;
 
-import java.util.Date;
 import java.util.List;
+import org.sola.common.RolesConstants;
 import org.sola.services.boundary.wsclients.exception.WebServiceClientException;
 import org.sola.webservices.transferobjects.ValidationResult;
 import org.sola.webservices.transferobjects.administrative.*;
-import org.sola.webservices.transferobjects.search.RightsExportParamsTO;
-import org.sola.webservices.transferobjects.search.RightsExportResultTO;
 
 /**
  * Interface for the Administrative Service. Implemented by {@linkplain AdministrativeClientImpl}.
@@ -129,7 +127,7 @@ public interface AdministrativeClient extends AbstractWSClient {
     public static final String GET_SYS_REG_STATUS = SERVICE_NAME + "getSysRegStatus";
     public static final String GET_SYS_REG_PROGRESS = SERVICE_NAME + "getSysRegProgress";
     public static final String GET_SYS_REG_GENDER = SERVICE_NAME + "getSysRegGender";
-    
+    public static final String GET_LEASE_CONDITION_TEMPLATE = "getLeaseConditionTemplate";
     /**
      * Creates a new BA Unit Area for a BaUnitId
      *
@@ -320,6 +318,12 @@ public interface AdministrativeClient extends AbstractWSClient {
     List<SysRegProgressTO> getSysRegProgress(SysRegManagementParamsTO sysRegManagementParamsTO)
             throws WebServiceClientException;
 
-    List<SysRegGenderTO> getSysRegGender(String params)
-            throws WebServiceClientException;
+    List<SysRegGenderTO> getSysRegGender(String params) throws WebServiceClientException;
+    
+    /**
+     * Returns lease conditions template by ID
+     * @param id Lease conditions template ID
+     * @return 
+     */
+    LeaseConditionTemplateTO getLeaseConditionTemplate(String id) throws WebServiceClientException;
 }

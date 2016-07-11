@@ -99,7 +99,7 @@ public class Administrative extends AbstractWebService {
                 BaUnit newBaUnit = administrativeEJB.createBaUnit(
                         serviceIdTmp,
                         GenericTranslator.fromTO(baUnitTOTmp, BaUnit.class,
-                        administrativeEJB.getBaUnitById(baUnitTOTmp.getId())));
+                                administrativeEJB.getBaUnitById(baUnitTOTmp.getId())));
                 result[0] = GenericTranslator.toTO(newBaUnit, BaUnitTO.class);
             }
         });
@@ -135,7 +135,7 @@ public class Administrative extends AbstractWebService {
                     BaUnit newBaUnit = administrativeEJB.saveBaUnit(
                             serviceIdTmp,
                             GenericTranslator.fromTO(baUnitTOTmp, BaUnit.class,
-                            administrativeEJB.getBaUnitById(baUnitTOTmp.getId())));
+                                    administrativeEJB.getBaUnitById(baUnitTOTmp.getId())));
                     result[0] = GenericTranslator.toTO(newBaUnit, BaUnitTO.class);
                 }
             }
@@ -294,7 +294,7 @@ public class Administrative extends AbstractWebService {
             public void run() {
                 result[0] = GenericTranslator.toTO(
                         administrativeEJB.getBaUnitByCode(nameFirstpartTmp,
-                        nameLastpartTmp), BaUnitTO.class);
+                                nameLastpartTmp), BaUnitTO.class);
             }
         });
 
@@ -355,7 +355,7 @@ public class Administrative extends AbstractWebService {
                 BaUnitArea newBaUnitArea = administrativeEJB.createBaUnitArea(
                         baUnitIdTmp,
                         GenericTranslator.fromTO(baUnitAreaTOTmp, BaUnitArea.class,
-                        administrativeEJB.getBaUnitAreas(baUnitIdTmp)));
+                                administrativeEJB.getBaUnitAreas(baUnitIdTmp)));
                 result[0] = GenericTranslator.toTO(newBaUnitArea, BaUnitAreaTO.class);
             }
         });
@@ -393,8 +393,7 @@ public class Administrative extends AbstractWebService {
 
         return (BaUnitTO) result[0];
     }
-    
-    
+
 //    @WebMethod(operationName = "GetBaUnitsByCadObject")
 //    public List <BaUnitTO> GetBaUnitsByCadObject(
 //            @WebParam(name = "colist") String colist)
@@ -414,7 +413,6 @@ public class Administrative extends AbstractWebService {
 //
 //        return (List<BaUnitTO>) result[0];
 //    }
-    
     /**
      * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getSysRegPubDisParcelNameByLocation(java.lang.String)
      * AdministrativeEJB.getSysRegPubDisParcelNameByLocation}
@@ -428,7 +426,6 @@ public class Administrative extends AbstractWebService {
             @WebParam(name = "searchString") String searchString,
             @WebParam(name = "languageCode") String languageCode)
             throws SOLAFault, UnhandledFault, SOLAAccessFault, SOLAValidationFault, OptimisticLockingFault {
-
 
         final String searchStringTmp = searchString;
         final String languageCodeTmp = languageCode;
@@ -463,7 +460,6 @@ public class Administrative extends AbstractWebService {
             @WebParam(name = "languageCode") String languageCode)
             throws SOLAFault, UnhandledFault, SOLAAccessFault, SOLAValidationFault, OptimisticLockingFault {
 
-
         final String searchStringTmp = searchString;
         final String languageCodeTmp = languageCode;
 
@@ -496,7 +492,6 @@ public class Administrative extends AbstractWebService {
             @WebParam(name = "searchString") String searchString,
             @WebParam(name = "languageCode") String languageCode)
             throws SOLAFault, UnhandledFault, SOLAAccessFault, SOLAValidationFault, OptimisticLockingFault {
-
 
         final String searchStringTmp = searchString;
         final String languageCodeTmp = languageCode;
@@ -582,8 +577,8 @@ public class Administrative extends AbstractWebService {
 
         return (List<SysRegManagementTO>) result[0];
     }
-    
-     /**
+
+    /**
      * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getSysRegStatus(java.lang.String)
      * AdministrativeEJB.getSysRegStatus}
      *
@@ -615,7 +610,8 @@ public class Administrative extends AbstractWebService {
 
         return (List<SysRegStatusTO>) result[0];
     }
-     /**
+
+    /**
      * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getSysRegGender(java.lang.String)
      * AdministrativeEJB.getSysRegGender}
      *
@@ -646,10 +642,8 @@ public class Administrative extends AbstractWebService {
 
         return (List<SysRegGenderTO>) result[0];
     }
-    
-    
-    
-     /**
+
+    /**
      * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getSysRegProgress(java.lang.String)
      * AdministrativeEJB.getSysRegProgress}
      *
@@ -681,6 +675,32 @@ public class Administrative extends AbstractWebService {
 
         return (List<SysRegProgressTO>) result[0];
     }
-    
-   
+
+    /**
+     * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getLeaseConditionTemplate(java.lang.String)
+     * AdministrativeEJB.getLeaseConditionTemplate}
+     *
+     * @param id Lease conditions template ID
+     * @return 
+     * @throws SOLAFault
+     * @throws UnhandledFault
+     * @throws SOLAAccessFault
+     */
+    @WebMethod(operationName = "GetLeaseConditionTemplate")
+    public LeaseConditionTemplateTO GetLeaseConditionTemplate(
+            @WebParam(name = "id") final String id)
+            throws SOLAFault, UnhandledFault, SOLAAccessFault {
+
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTO(administrativeEJB.getLeaseConditionTemplate(id), LeaseConditionTemplateTO.class);
+            }
+        });
+
+        return (LeaseConditionTemplateTO) result[0];
+    }
 }

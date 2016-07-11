@@ -156,6 +156,8 @@ public interface SearchClient extends AbstractWSClient {
      */
     public static final String TRANSFORM =
             SERVICE_NAME + "transform";
+    
+    public static final String GET_LEASE_CONDITION_TEMPLATES = "getLeaseConditionTemplates";
     /**
      * Returns applications that have a lodged or approved status and are assigned to the currently
      * logged in user.
@@ -391,4 +393,11 @@ public interface SearchClient extends AbstractWSClient {
      * @return Transformed geometry
      */
     public byte[] transform(byte[] geom, int srid);
+    
+    /** 
+     * Returns lease conditions templates 
+     * @param rrrType RRR type code. If empty, all templates will be returned.
+     * @return 
+     */
+    public List<LeaseConditionTemplateSearchResultsTO> getLeaseConditionTemplates(String rrrType) throws WebServiceClientException;
 }

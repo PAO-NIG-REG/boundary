@@ -770,4 +770,34 @@ public class Search extends AbstractWebService {
 
         return (byte[])result[0];
     }
+    
+    /**
+     * See {@linkplain org.sola.services.ejb.source.businesslogic.SearchEJB#
+     * getLeaseConditionTemplates(String, String) SearchEJB.getLeaseConditionTemplates}
+     *
+     * @param lang Language code
+     * @param rrrType RRR type code
+     * @return 
+     * @throws SOLAFault
+     * @throws UnhandledFault
+     * @throws SOLAAccessFault
+     */
+    @WebMethod(operationName = "GetLeaseConditionTemplates")
+    public List<LeaseConditionTemplateSearchResultsTO> GetLeaseConditionTemplates(
+            @WebParam(name = "lang") final String lang,
+            @WebParam(name = "rrrType") final String rrrType)
+       throws SOLAFault, UnhandledFault, SOLAAccessFault {
+
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTOList(searchEJB.getLeaseConditionTemplates(lang, rrrType), LeaseConditionTemplateSearchResultsTO.class);
+            }
+        });
+
+        return (List<LeaseConditionTemplateSearchResultsTO>)result[0];
+    }
 }

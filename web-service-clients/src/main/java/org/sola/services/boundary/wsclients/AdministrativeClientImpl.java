@@ -29,7 +29,6 @@
  */
 package org.sola.services.boundary.wsclients;
 
-import java.util.Date;
 import java.util.List;
 import javax.xml.namespace.QName;
 import org.sola.services.boundary.wsclients.exception.WebServiceClientException;
@@ -37,8 +36,6 @@ import org.sola.webservices.administrative.Administrative;
 import org.sola.webservices.administrative.AdministrativeService;
 import org.sola.webservices.transferobjects.ValidationResult;
 import org.sola.webservices.transferobjects.administrative.*;
-import org.sola.webservices.transferobjects.search.RightsExportParamsTO;
-import org.sola.webservices.transferobjects.search.RightsExportResultTO;
 
 /**
  * Implementation class for the {@linkplain AdministrativeClient} interface.
@@ -380,6 +377,21 @@ public class AdministrativeClientImpl extends AbstractWSClientImpl
             processException(methodName, e);
         } finally {
             afterWebMethod(methodName, result, sysRegManagementParamsTO, languageCode);
+        }
+        return result;
+    }
+
+    @Override
+    public LeaseConditionTemplateTO getLeaseConditionTemplate(String id) throws WebServiceClientException {
+        LeaseConditionTemplateTO result = null;
+        final String methodName = AdministrativeClient.GET_LEASE_CONDITION_TEMPLATE;
+        try {
+            beforeWebMethod(methodName, id);
+            result = getPort().getLeaseConditionTemplate(id);
+        } catch (Exception e) {
+            processException(methodName, e);
+        } finally {
+            afterWebMethod(methodName, result, id);
         }
         return result;
     }

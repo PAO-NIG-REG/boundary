@@ -449,4 +449,19 @@ public class SearchClientImpl extends AbstractWSClientImpl implements SearchClie
         }
         return result;
     }
+
+    @Override
+    public List<LeaseConditionTemplateSearchResultsTO> getLeaseConditionTemplates(String rrrType) throws WebServiceClientException {
+        List<LeaseConditionTemplateSearchResultsTO> result = null;
+        final String methodName = SearchClient.GET_LEASE_CONDITION_TEMPLATES;
+        try {
+            beforeWebMethod(methodName, rrrType);
+            result = getPort().getLeaseConditionTemplates(getLanguageCode(), rrrType);
+        } catch (Exception e) {
+            processException(methodName, e);
+        } finally {
+            afterWebMethod(methodName, result, rrrType);
+        }
+        return result;
+    }
 }

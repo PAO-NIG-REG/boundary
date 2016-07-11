@@ -453,4 +453,9 @@ public class MockAdministrativePort implements Administrative {
             return null;
         }
     }
+
+    @Override
+    public LeaseConditionTemplateTO getLeaseConditionTemplate(String id) throws SOLAAccessFault, SOLAFault, UnhandledFault {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
