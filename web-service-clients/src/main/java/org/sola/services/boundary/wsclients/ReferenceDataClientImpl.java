@@ -353,7 +353,29 @@ public class ReferenceDataClientImpl extends AbstractWSClientImpl implements Ref
         }
         return result;
     }
+    
+    @Override
+    public List<CofoTypeTO> getCofoTypes() throws WebServiceClientException {
+        return getCofoTypes(this.getLanguageCode());
+    }
 
+    @Override
+    public List<CofoTypeTO> getCofoTypes(String lang) throws WebServiceClientException {
+        List<CofoTypeTO> result = null;
+        final String methodName = ReferenceDataClient.GET_COFO_TYPES;
+        try {
+            beforeWebMethod(methodName, lang);
+            result = getPort().getCofoTypes(lang);
+        } catch (Exception e) {
+            processException(methodName, e);
+        } finally {
+            afterWebMethod(methodName, result, lang);
+        }
+        return result;
+    }
+
+    
+    
     @Override
     public List<MortgageTypeTO> getMortgageTypes() throws WebServiceClientException {
         return getMortgageTypes(getLanguageCode());

@@ -258,6 +258,14 @@ public class MockTOFactory {
 
         return result;
     }
+    
+    public static List<CofoTypeTO> createCofoTypes() {
+        List<CofoTypeTO> result = new ArrayList<CofoTypeTO>();
+        result.add(createCode(CofoTypeTO.class, "building", "Building"));
+        result.add(createCode(CofoTypeTO.class, "agricultural", "Agricultural"));
+
+        return result;
+    }
 
     /**
      * Creates a default Mortgage types

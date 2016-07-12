@@ -549,6 +549,28 @@ public class ReferenceData extends AbstractWebService {
         return (List<BaUnitTypeTO>) result[0];
     }
 
+    
+      @WebMethod(operationName = "GetCofoTypes")
+    public List<CofoTypeTO> GetCofoTypes(String languageCode)
+            throws SOLAFault, UnhandledFault, SOLAAccessFault {
+
+        final String languageCodeTmp = languageCode;
+        final Object[] result = {null};
+
+        runGeneralQuery(wsContext, new Runnable() {
+
+            @Override
+            public void run() {
+                result[0] = GenericTranslator.toTOList(
+                        administrativeEJB.getCofoTypes(languageCodeTmp), CofoTypeTO.class);
+            }
+        });
+
+        return (List<CofoTypeTO>) result[0];
+    }
+
+    
+    
     /**
      * See {@linkplain org.sola.services.ejb.administrative.businesslogic.AdministrativeEJB#getChangeStatusTypes(java.lang.String)
      * AdministrativeEJB.getChangeStatusTypes}

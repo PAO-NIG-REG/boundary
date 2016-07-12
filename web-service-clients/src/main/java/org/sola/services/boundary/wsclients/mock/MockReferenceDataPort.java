@@ -225,6 +225,18 @@ public class MockReferenceDataPort implements ReferenceData {
             return null;
         }
     }
+    
+    @Override
+    public List<CofoTypeTO> getCofoTypes(String arg0) throws SOLAAccessFault, SOLAFault, UnhandledFault {
+        List<CofoTypeTO> defaultResponse = MockTOFactory.createCofoTypes();
+        try {
+            return getManager().getResponse(ReferenceDataClient.GET_COFO_TYPES,
+                    List.class, defaultResponse, arg0);
+        } catch (Exception ex) {
+            processExceptionAccess(ex);
+            return null;
+        }
+    }
 
     /**
      * Response Key = ReferenceDataClient.GET_RRR_GROUP_TYPES

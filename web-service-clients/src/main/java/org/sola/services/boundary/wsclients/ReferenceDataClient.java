@@ -109,6 +109,8 @@ public interface ReferenceDataClient extends AbstractWSClient {
      * ReferenceData.getBaUnitTypes - Identifier for the getBaUnitTypes method
      */
     public static final String GET_BA_UNIT_TYPES = SERVICE_NAME + "getBaUnitTypes";
+    
+    public static final String GET_COFO_TYPES = SERVICE_NAME + "getCofoTypes";
     /**
      * ReferenceData.getMortgageTypes - Identifier for the getMortgageTypes method
      */
@@ -448,7 +450,15 @@ public interface ReferenceDataClient extends AbstractWSClient {
      * @throws WebServiceClientException
      */
     List<BaUnitTypeTO> getBaUnitTypes(String lang) throws WebServiceClientException;
+    
+    
+    
+    List<CofoTypeTO> getCofoTypes() throws WebServiceClientException;
 
+    List<CofoTypeTO> getCofoTypes(String lang) throws WebServiceClientException;
+
+    
+    
     /**
      * Retrieves all administrative.mortgage_type code values using the default locale of the client
      * to localize the display values.
