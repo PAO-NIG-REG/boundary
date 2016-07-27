@@ -51,6 +51,15 @@ public class BaUnitTO extends AbstractIdTO {
     private String pendingActionCode;
     private BigDecimal calculatedAreaSize;
     private List<BaUnitDetailTO> baUnitDetailList;
+    private String addressNotice;
+
+    public String getAddressNotice() {
+        return addressNotice;
+    }
+
+    public void setAddressNotice(String addressNotice) {
+        this.addressNotice = addressNotice;
+    }
     
     public BigDecimal getCalculatedAreaSize() {
         return calculatedAreaSize;
